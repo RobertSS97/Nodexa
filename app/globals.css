@@ -1,0 +1,357 @@
+@import "tailwindcss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 10, 10, 20;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-start-rgb));
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+/* Animações mais simples para evitar problemas */
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@layer utilities {
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+}
+
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+@layer utilities {
+  .animate-blob {
+    animation: blob 7s infinite;
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+@keyframes pulse-slow {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse-slower {
+  0%,
+  100% {
+    opacity: 0.15;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-pulse-slower {
+  animation: pulse-slower 7s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.delay-100 {
+  animation-delay: 0.1s;
+}
+
+.delay-200 {
+  animation-delay: 0.2s;
+}
+
+.delay-300 {
+  animation-delay: 0.3s;
+}
+
+.delay-400 {
+  animation-delay: 0.4s;
+}
+
+.bg-grid-pattern {
+  background-image: linear-gradient(to right, #1a1a1a 1px, transparent 1px),
+    linear-gradient(to bottom, #1a1a1a 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+/* Adicione estas novas animações ao final do seu arquivo globals.css */
+
+@keyframes float-slow {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  33% {
+    transform: translate(10px, -10px);
+  }
+  66% {
+    transform: translate(-10px, 10px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+@keyframes float-medium {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  33% {
+    transform: translate(20px, -15px);
+  }
+  66% {
+    transform: translate(-15px, 8px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+@keyframes float-fast {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  33% {
+    transform: translate(-12px, -18px);
+  }
+  66% {
+    transform: translate(15px, 10px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 20s ease-in-out infinite;
+}
+
+.animate-float-medium {
+  animation: float-medium 15s ease-in-out infinite;
+}
+
+.animate-float-fast {
+  animation: float-fast 10s ease-in-out infinite;
+}
+
+/* Adicione esta animação para a barra de progresso */
+@keyframes progress {
+  0% {
+    width: 0%;
+  }
+  50% {
+    width: 60%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+/* Estilos para animação do menu mobile */
+
+/* Menu toggle animation */
+#menu-toggle:checked ~ label span:first-child {
+  transform: rotate(45deg) translate(1.5px, 1.5px);
+}
+
+#menu-toggle:checked ~ label span:nth-child(2) {
+  opacity: 0;
+}
+
+#menu-toggle:checked ~ label span:last-child {
+  transform: rotate(-45deg) translate(1.5px, -1.5px);
+}
+
+/* Animação de entrada para itens do menu mobile */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.peer-checked .w-full {
+  animation: fadeInUp 0.5s ease forwards;
+  opacity: 0;
+}
+
+/* Efeito de transparência do header ao rolar */
+header {
+  transition: background-color 0.3s ease-in-out, height 0.3s ease-in-out;
+}
+
+/* Adiciona uma linha de destaque no item de menu ativo */
+.active-link {
+  color: white;
+}
+
+.active-link span:last-child {
+  width: 100%;
+}
+
+/* Adicionar após sua seção do header */
+
+/* Menu com efeito de vidro aprimorado */
+.glass-menu {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  -moz-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(30, 64, 175, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+/* Menu mobile com efeito de vidro mais intenso */
+.mobile-glass-menu {
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  -moz-backdrop-filter: blur(25px);
+}
+
+/* Prefixos para backdrop-filter em diferentes navegadores */
+@supports (-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px)) {
+  .glass-menu, .mobile-glass-menu {
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+  }
+}
+
+/* Fallback para navegadores que não suportam backdrop-filter */
+@supports not ((-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px))) {
+  .glass-menu {
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  .mobile-glass-menu {
+    background-color: rgba(0, 0, 0, 0.95);
+  }
+}
+
+/* Efeito de hover aprimorado para links do menu */
+.nav-link {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #3b82f6; /* cor azul do Tailwind */
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::before,
+.active-link::before {
+  width: 100%;
+}
+
+/* Adicione ao final do arquivo */
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+.whatsapp-pulse {
+  animation: pulse 2s infinite;
+}
+
+/* Melhorar a transição do botão do WhatsApp */
+@media (min-width: 768px) {
+  .group:hover .whatsapp-text {
+    max-width: 120px;
+    opacity: 1;
+    margin-right: 8px;
+  }
+}
