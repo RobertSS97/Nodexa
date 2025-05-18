@@ -42,7 +42,7 @@ git push -u origin master
 
 4. No GitHub, acesse as configurações do repositório (Settings > Pages) e verifique se:
    - Source está definido como "Deploy from a branch"
-   - Branch está definido como "gh-pages" (criado automaticamente pelo workflow)
+   - Branch está definido como "gh-pages" (criado automaticamente pelo workflow quando você faz push para a branch `master`)
 
 5. Se você tem um domínio personalizado:
    - Adicione seu domínio em Settings > Pages > Custom Domain
