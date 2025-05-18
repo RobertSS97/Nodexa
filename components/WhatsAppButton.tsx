@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import baseURL from '@/utils/paths';
 
 interface WhatsAppButtonProps {
-  phoneNumber: string;
-  message?: string;
+  phoneNumber?: string; // Opcional com '?'
+  message?: string; // Adicionando a propriedade message como opcional
 }
 
 const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({ 
-  phoneNumber,
+  phoneNumber = "5511912345678",
   message = "Olá! Gostaria de mais informações sobre seus serviços."
 }) => {
   // Remove qualquer caractere não numérico do número

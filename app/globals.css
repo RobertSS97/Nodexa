@@ -223,6 +223,7 @@ html {
   }
 }
 
+/* Remova tudo isso - Início */
 /* Estilos para animação do menu mobile */
 
 /* Menu toggle animation */
@@ -254,22 +255,6 @@ html {
   animation: fadeInUp 0.5s ease forwards;
   opacity: 0;
 }
-
-/* Efeito de transparência do header ao rolar */
-header {
-  transition: background-color 0.3s ease-in-out, height 0.3s ease-in-out;
-}
-
-/* Adiciona uma linha de destaque no item de menu ativo */
-.active-link {
-  color: white;
-}
-
-.active-link span:last-child {
-  width: 100%;
-}
-
-/* Adicionar após sua seção do header */
 
 /* Menu com efeito de vidro aprimorado */
 .glass-menu {
@@ -306,6 +291,22 @@ header {
     background-color: rgba(0, 0, 0, 0.95);
   }
 }
+/* Remova tudo isso - Fim */
+
+/* Mantenha estas classes para o header e links de navegação, pois não são exclusivas do menu mobile */
+/* Efeito de transparência do header ao rolar */
+header {
+  transition: background-color 0.3s ease-in-out, height 0.3s ease-in-out;
+}
+
+/* Adiciona uma linha de destaque no item de menu ativo */
+.active-link {
+  color: white;
+}
+
+.active-link span:last-child {
+  width: 100%;
+}
 
 /* Efeito de hover aprimorado para links do menu */
 .nav-link {
@@ -329,7 +330,7 @@ header {
   width: 100%;
 }
 
-/* Adicione ao final do arquivo */
+/* ... o restante do seu código ... */
 
 @keyframes pulse {
   0% {
