@@ -6,6 +6,7 @@ import "./globals.css";
 import Link from "next/link";
 import { useEffect } from "react";
 import WhatsAppButton from '@/components/WhatsAppButton';
+import baseURL from '@/utils/paths';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -65,7 +66,7 @@ export default function RootLayout({
           <div className="container max-w-6xl mx-auto flex justify-between items-center h-16 md:h-20 px-6">
             {/* Logo */}
             <div className="relative z-10">
-              <Link href="/" className="flex items-center group">
+              <Link href={baseURL || "/"} className="flex items-center group">
                 <div className="w-8 h-8 mr-2 bg-gradient-to-br from-blue-500 to-purple-600 rounded flex items-center justify-center text-white font-bold text-lg transition-transform duration-300 group-hover:scale-110">
                   N
                 </div>

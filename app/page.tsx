@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useEffect } from 'react';
 import TechLogos from '@/components/TechLogos';
+import baseURL from '@/utils/paths';
 
 export default function Home() {
   useEffect(() => {
@@ -286,7 +287,7 @@ export default function Home() {
               <div className="relative z-10">
                 <div className="mb-5 p-4 bg-blue-900/30 rounded-xl inline-block">
                   <Image
-                    src="/window.svg"
+                    src={`${baseURL}/window.svg`}
                     alt="Suporte Técnico"
                     width={32}
                     height={32}
@@ -325,7 +326,7 @@ export default function Home() {
               <div className="relative z-10">
                 <div className="mb-5 p-4 bg-blue-900/30 rounded-xl inline-block">
                   <Image
-                    src="/globe.svg"
+                    src={`${baseURL}/globe.svg`}
                     alt="Consultoria"
                     width={32}
                     height={32}
@@ -364,7 +365,7 @@ export default function Home() {
               <div className="relative z-10">
                 <div className="mb-5 p-4 bg-blue-900/30 rounded-xl inline-block">
                   <Image
-                    src="/file.svg"
+                    src={`${baseURL}/file.svg`}
                     alt="Desenvolvimento"
                     width={32}
                     height={32}
@@ -404,7 +405,7 @@ export default function Home() {
       {/* Tech Features Section */}
       <section className="py-24 px-6 bg-black relative overflow-hidden">
         {/* Tech Pattern Background */}
-        <div className="absolute inset-0 z-0 opacity-10 bg-[url('/circuit.png')] bg-repeat"></div>
+        <div className="absolute inset-0 z-0 opacity-10" style={{ backgroundImage: `url('${baseURL}/circuit.png')`, backgroundRepeat: 'repeat' }}></div>
 
         <div className="container max-w-6xl mx-auto relative z-10">
           <div className="grid md:grid-cols-2 gap-16 items-center">
@@ -509,7 +510,7 @@ export default function Home() {
             <div className="relative">
               <div className="relative z-10 rounded-2xl overflow-hidden border border-blue-500/30 shadow-lg shadow-blue-500/20">
                 <Image
-                  src="/tech-image.jpg"
+                  src={`${baseURL}/images/tech-image.jpg`}
                   alt="Tecnologia Avançada"
                   width={600}
                   height={400}
@@ -535,7 +536,7 @@ export default function Home() {
             <div className="relative w-full aspect-[4/3] bg-black rounded-2xl overflow-hidden border border-gray-800 shadow-lg shadow-blue-900/10">
               {/* Replace the placeholder with a better image */}
               <Image
-                src="/tech-team.jpg"
+                src={`${baseURL}/images/tech-team.jpg`}
                 alt="Sobre a Nodexa"
                 fill={true}
                 className="object-cover rounded-lg"
@@ -635,7 +636,7 @@ export default function Home() {
               <div className="flex items-center">
                 <div className="w-10 h-10 rounded-full bg-gray-700 overflow-hidden mr-4">
                   <Image
-                    src="/avatar-1.jpg"
+                    src={`${baseURL}/images/avatar-1.jpg`}
                     alt="Cliente"
                     width={40}
                     height={40}
@@ -660,7 +661,7 @@ export default function Home() {
               <div className="flex items-center">
                 <div className="w-10 h-10 rounded-full bg-gray-700 overflow-hidden mr-4">
                   <Image
-                    src="/avatar-2.jpg"
+                    src={`${baseURL}/images/avatar-2.jpg`}
                     alt="Cliente"
                     width={40}
                     height={40}
@@ -685,7 +686,7 @@ export default function Home() {
               <div className="flex items-center">
                 <div className="w-10 h-10 rounded-full bg-gray-700 overflow-hidden mr-4">
                   <Image
-                    src="/avatar-3.jpg"
+                    src={`${baseURL}/images/avatar-3.jpg`}
                     alt="Cliente"
                     width={40}
                     height={40}
@@ -705,7 +706,7 @@ export default function Home() {
       {/* Contact Section */}
       <section id="contact" className="py-24 px-6 bg-gradient-to-b from-gray-900 to-black relative overflow-hidden">
         {/* Tech Grid Pattern */}
-        <div className="absolute inset-0 z-0 opacity-5 bg-[url('/grid.png')] bg-repeat"></div>
+        <div className="absolute inset-0 z-0 opacity-5" style={{ backgroundImage: `url('${baseURL}/grid.png')`, backgroundRepeat: 'repeat' }}></div>
 
         <div className="container max-w-4xl mx-auto relative z-10">
           <div className="bg-gray-900/70 backdrop-blur-md border border-gray-800 rounded-2xl p-8 md:p-12 shadow-lg shadow-blue-900/5">

@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
+import baseURL from '@/utils/paths';
 
 interface TechLogo {
   name: string;

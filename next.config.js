@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',  // Necessário para exportação estática
-  basePath: process.env.NODE_ENV === 'production' ? '/nodexa' : '', // Nome do repositório
+  basePath: process.env.NODE_ENV === 'production' ? '/Nodexa' : '', // Nome do repositório (com N maiúsculo)
   images: {
     remotePatterns: [
       {
